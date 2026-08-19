@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>SAM 생윤·윤사 개인정보처리방침</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --paper: #ffffff;
+      --ink: #17202a;
+      --muted: #647180;
+      --line: #e2e7ec;
+      --accent: #2864c7;
+      --accent-soft: #eef4ff;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    a { color: var(--accent); }
+    .shell { width: min(840px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .paper {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 38px;
+      box-shadow: 0 8px 28px rgba(23, 32, 42, .04);
+    }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 14px; font-weight: 800; letter-spacing: .02em; }
+    h1 { margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.2; letter-spacing: -.045em; }
+    .meta { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 28px 0 0; padding: 15px 17px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfe; font-size: 14px; font-weight: 700; }
+    .section { padding-top: 30px; }
+    .section + .section { margin-top: 28px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 21px; line-height: 1.4; letter-spacing: -.025em; }
+    h3 { margin: 22px 0 8px; font-size: 17px; line-height: 1.5; }
+    p { margin: 8px 0; }
+    ol, ul { margin: 10px 0; padding-left: 23px; }
+    li + li { margin-top: 7px; }
+    .records { display: grid; gap: 12px; margin-top: 14px; }
+    .record { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfe; }
+    .record h3 { margin: 0 0 6px; color: var(--ink); }
+    .record p { margin: 4px 0; }
+    .record strong { color: #34495e; }
+    .note { margin: 14px 0; padding: 14px 16px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: #27466f; }
+    .business-info { display: grid; grid-template-columns: minmax(130px, 180px) 1fr; margin: 14px 0 0; border-top: 1px solid var(--line); }
+    .business-info dt, .business-info dd { margin: 0; padding: 12px 10px; border-bottom: 1px solid var(--line); }
+    .business-info dt { color: var(--muted); font-weight: 700; }
+    .business-info dd { overflow-wrap: anywhere; }
+    .footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 20px, 840px); padding: 18px 0 44px; }
+      .paper { padding: 24px 18px; border-radius: 18px; }
+      .business-info { grid-template-columns: 1fr; }
+      .business-info dt { padding-bottom: 3px; border-bottom: 0; }
+      .business-info dd { padding-top: 3px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <article class="paper">
+      <p class="eyebrow">SAM 생윤·윤사</p>
+      <h1>개인정보처리방침</h1>
+      <p class="meta">시행일: 2026년 8월 19일 · 최종 수정일: 2026년 8월 19일</p>
+
+      <nav class="nav" aria-label="문서 이동">
+        <a href="../">법적 고지 홈</a>
+        <a href="../terms/">서비스 이용약관</a>
+      </nav>
+
+      <section class="section">
+        <h2>1. 개인정보 처리 목적</h2>
+        <p>샐러드76(이하 “운영자”)는 “SAM 생윤·윤사” 서비스 이용자의 개인정보를 중요하게 여기며 「개인정보 보호법」 등 관계 법령을 준수합니다. 운영자는 다음 목적에 필요한 범위에서 개인정보를 처리합니다.</p>
+        <ul>
+          <li>회원 식별, 로그인, 계정 연결 및 부정 이용 방지</li>
+          <li>문제 풀이, 채점, 피드백, 오답 재학습, 복습 및 진도 기록 제공</li>
+          <li>과목별 이용권 확인, 결제, 구매 복구 및 환불 처리</li>
+          <li>서비스 안정성, 오류 분석, 보안 및 고객 문의 대응</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>2. 처리하는 개인정보 항목</h2>
+        <div class="records">
+          <article class="record">
+            <h3>토스 로그인 및 회원 식별</h3>
+            <p><strong>항목:</strong> 토스 <span lang="en">userKey</span>, 로그인 연결 상태, 최근 로그인 시각 및 토스 로그인 과정에서 이용자가 동의한 범위의 회원 식별정보</p>
+            <p>이메일 scope가 활성화된 경우 이메일 정보가 로그인 과정에서 전달될 수 있으며, 서비스 계정 매핑 등에 이메일 해시값을 사용할 수 있습니다. 이메일을 필수 수집항목이라고 단정하지 않습니다.</p>
+          </article>
+          <article class="record">
+            <h3>학습 서비스</h3>
+            <p><strong>항목:</strong> Supabase 내부 회원 식별자, 학습 진도, 문제 풀이 및 정오답 기록, 시도 기록, 복습 상태 및 일정</p>
+          </article>
+          <article class="record">
+            <h3>유료 서비스 이용</h3>
+            <p><strong>항목:</strong> 구매 과목, 상품 식별정보, 주문·결제 식별정보, 결제 상태, 과목별 이용권 상태, 구매 복구 및 환불 처리에 필요한 정보</p>
+            <p>생활과 윤리 및 윤리와 사상 이용권은 별도로 관리될 수 있습니다.</p>
+          </article>
+          <article class="record">
+            <h3>고객 문의 및 서비스 운영</h3>
+            <p><strong>항목:</strong> 문의에 사용한 이메일 주소, 문의 내용 및 이용자가 문의 과정에서 제공한 정보, 서비스 이용 과정에서 생성되는 접속·오류·보안 관련 기록</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>3. 개인정보의 보유 및 이용기간</h2>
+        <ul>
+          <li>회원 식별정보와 학습 기록은 회원 탈퇴 시 또는 처리 목적이 달성될 때까지 보유·이용합니다.</li>
+          <li>유료 서비스의 주문·결제 및 이용권 정보는 결제, 구매 복구, 환불 및 분쟁 대응에 필요한 기간 동안 보유하며, 관계 법령에 따라 보존해야 하는 경우에는 해당 기간 동안 별도로 보관합니다.</li>
+          <li>고객 문의 정보는 문의 처리와 분쟁 대응에 필요한 기간 동안 보유한 뒤 파기합니다. 법령상 보존기간이 있으면 그 기간을 따릅니다.</li>
+          <li>서비스 운영·보안 로그는 목적 달성에 필요한 기간 동안 보유하며, 법령 또는 실제 운영정책에 따라 별도 보존기간이 정해지는 경우 그 기간을 적용합니다.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>4. 개인정보의 수집 방법</h2>
+        <ol>
+          <li>토스 로그인 과정에서 이용자의 동의를 거쳐 토스로부터 제공받는 방법</li>
+          <li>이용자가 서비스에서 문제를 풀거나 기능을 이용하면서 생성되는 방법</li>
+          <li>유료 서비스 구매, 구매 복구 또는 환불 과정에서 앱인토스·앱마켓 등 결제 연동을 통해 확인하는 방법</li>
+          <li>고객센터 문의 과정에서 이용자가 직접 제공하는 방법</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>5. 법령에 따른 거래기록의 보존</h2>
+        <p>전자상거래 관련 법령에 따라 다음 기록은 회원 탈퇴 후에도 법정 기간 동안 별도로 보관할 수 있습니다.</p>
+        <div class="records">
+          <article class="record"><strong>표시·광고에 관한 기록</strong><p>6개월</p></article>
+          <article class="record"><strong>계약 또는 청약철회 등에 관한 기록</strong><p>5년</p></article>
+          <article class="record"><strong>대금결제 및 재화 등의 공급에 관한 기록</strong><p>5년</p></article>
+          <article class="record"><strong>소비자의 불만 또는 분쟁처리에 관한 기록</strong><p>3년</p></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>6. 개인정보의 제3자 제공</h2>
+        <p>운영자는 원칙적으로 이용자의 개인정보를 수집·이용 목적의 범위 안에서 처리하며, 이용자의 별도 동의가 있거나 법령에 근거가 있는 경우를 제외하고 제3자에게 제공하지 않습니다.</p>
+        <p>토스 로그인 및 앱인토스 결제 과정에서 비바리퍼블리카 또는 앱마켓·결제 사업자가 자신의 서비스 제공을 위해 독립적으로 처리하는 정보에는 해당 사업자의 개인정보처리방침이 적용될 수 있습니다.</p>
+      </section>
+
+      <section class="section">
+        <h2>7. 개인정보 처리업무의 위탁</h2>
+        <p>운영자는 서비스 제공에 필요한 범위에서 다음과 같이 개인정보 처리업무를 위탁할 수 있습니다.</p>
+        <div class="records">
+          <article class="record">
+            <h3>Supabase, Inc.</h3>
+            <p><strong>위탁업무:</strong> 회원 식별 지원, 서비스 데이터베이스 및 학습 기록의 저장·처리</p>
+            <p><strong>보유·이용기간:</strong> 위탁 목적 달성 또는 관련 계약 종료 시까지. 법령상 보존이 필요한 정보는 해당 기간 동안 보관합니다.</p>
+          </article>
+          <article class="record">
+            <h3>추가 외부 인프라 사업자</h3>
+            <p>운영자가 호스팅, 오류 분석 또는 서비스 운영을 위해 추가 외부 사업자를 이용하는 경우에는 실제 운영 구조에 맞춰 사업자명, 위탁업무, 보유·이용기간을 이 방침 또는 서비스 내 별도 안내로 공개합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>8. 개인정보의 국외 이전</h2>
+        <p>클라우드·호스팅 서비스의 실제 운영 설정에 따라 개인정보가 국외에서 저장 또는 처리될 수 있습니다. 국외 이전이 발생하는 경우 운영자는 「개인정보 보호법」 등 관계 법령에 따라 이전받는 자, 이전 국가, 이전 항목, 목적, 시기·방법 및 보유기간을 이용자가 확인할 수 있도록 고지하거나 필요한 동의 절차를 진행합니다.</p>
+        <p class="note">현재 공개본에서는 실제 production 설정으로 확인되지 않은 국가 또는 서버 리전을 임의로 특정하지 않습니다. 운영 구조가 확정되거나 변경되면 그 사실에 맞춰 이 방침을 갱신합니다.</p>
+      </section>
+
+      <section class="section">
+        <h2>9. 개인정보의 파기</h2>
+        <ol>
+          <li>개인정보의 처리 목적이 달성되거나 보유기간이 끝난 경우 지체 없이 파기합니다. 다만 관계 법령에 따라 보존해야 하는 정보는 다른 개인정보와 분리하여 해당 기간 동안 보관합니다.</li>
+          <li>전자적 파일은 복구 또는 재생이 어렵도록 안전한 방법으로 삭제하며, 종이 문서가 있는 경우 분쇄 또는 소각 등의 방법으로 파기합니다.</li>
+          <li>토스 로그인 연결 해제는 서비스와 토스 계정의 연결을 끊는 절차이며 회원 탈퇴와 동일하지 않을 수 있습니다. 회원 탈퇴 및 개인정보 삭제를 원하는 경우 서비스 또는 고객센터가 안내하는 절차를 이용할 수 있습니다.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>10. 정보주체의 권리 및 행사 방법</h2>
+        <ol>
+          <li>이용자는 자신의 개인정보에 대해 열람, 정정·삭제, 처리정지, 동의 철회 등 관계 법령에서 정한 권리를 행사할 수 있습니다.</li>
+          <li>권리 행사는 서비스 내 기능 또는 고객센터를 통해 요청할 수 있으며, 운영자는 관계 법령에 따라 필요한 본인 확인 후 처리합니다.</li>
+          <li>법령에 따라 보존해야 하는 정보 등은 삭제 요청이 제한될 수 있으며, 그 사유가 있는 경우 이용자에게 안내합니다.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>11. 개인정보의 안전성 확보조치</h2>
+        <p>운영자는 개인정보 보호를 위해 접근권한 최소화, 인증정보 및 비밀정보의 서버 측 관리, 전송구간 암호화, 데이터베이스 접근통제, 보안 로그 관리 등 서비스 규모와 위험 수준에 맞는 기술적·관리적 보호조치를 시행합니다.</p>
+      </section>
+
+      <section class="section">
+        <h2>12. 쿠키 및 세션</h2>
+        <ol>
+          <li>서비스는 로그인 세션 유지 및 보안을 위해 필요한 쿠키 또는 유사 저장기술을 사용할 수 있습니다.</li>
+          <li>이용자는 브라우저 또는 기기 설정을 통해 쿠키 저장을 제한할 수 있으나, 이 경우 로그인 등 일부 기능의 이용이 제한될 수 있습니다.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>13. 개인정보 보호책임자 및 문의처</h2>
+        <dl class="business-info">
+          <dt>개인정보 보호책임자</dt><dd>김승은</dd>
+          <dt>운영자</dt><dd>샐러드76</dd>
+          <dt>사업자등록번호</dt><dd>367-04-03645</dd>
+          <dt>사업장 주소</dt><dd>서울특별시 서초구 동광로 173, 302호</dd>
+          <dt>이메일</dt><dd><a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></dd>
+          <dt>전화번호</dt><dd><a href="tel:010-3299-2683">010-3299-2683</a></dd>
+        </dl>
+      </section>
+
+      <section class="section">
+        <h2>14. 개인정보처리방침의 변경</h2>
+        <p>이 방침의 내용이 변경되는 경우 적용일과 주요 변경 내용을 서비스 내 또는 연결된 웹페이지를 통해 안내합니다. 이용자의 권리에 중대한 영향을 주는 변경은 관계 법령에 따라 필요한 사전 고지 또는 동의 절차를 진행합니다.</p>
+      </section>
+
+      <p class="footer">이 방침은 SAM 생윤·윤사의 토스 로그인, 학습기록 및 과목별 유료 서비스 운영을 기준으로 작성되었습니다. <a href="../terms/">서비스 이용약관 보기</a></p>
+    </article>
+  </main>
+</body>
+</html>

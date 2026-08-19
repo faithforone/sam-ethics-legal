@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>SAM 생윤·윤사 법적 고지</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --paper: #ffffff;
+      --ink: #17202a;
+      --muted: #647180;
+      --line: #e2e7ec;
+      --accent: #2864c7;
+      --accent-soft: #eef4ff;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    a { color: var(--accent); }
+    .shell { width: min(840px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .paper {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 38px;
+      box-shadow: 0 8px 28px rgba(23, 32, 42, .04);
+    }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 14px; font-weight: 800; letter-spacing: .02em; }
+    h1 { margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.2; letter-spacing: -.045em; }
+    .lead { margin: 16px 0 0; color: var(--muted); font-size: 17px; }
+    .documents { display: grid; gap: 12px; margin: 34px 0 0; }
+    .document-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fbfcfe;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 750;
+    }
+    .document-link:hover { border-color: #a9c2eb; background: var(--accent-soft); }
+    .arrow { color: var(--accent); font-size: 20px; line-height: 1; }
+    .contact { margin: 34px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
+    .contact h2 { margin: 0 0 8px; font-size: 19px; }
+    .contact p { margin: 4px 0; color: var(--muted); }
+    .footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 20px, 840px); padding: 18px 0 44px; }
+      .paper { padding: 24px 18px; border-radius: 18px; }
+      .lead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <article class="paper">
+      <p class="eyebrow">SAM 생윤·윤사</p>
+      <h1>법적 고지</h1>
+      <p class="lead">서비스 이용약관과 개인정보처리방침을 확인할 수 있습니다.</p>
+
+      <nav class="documents" aria-label="법적 문서">
+        <a class="document-link" href="./terms/">
+          <span>서비스 이용약관</span><span class="arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="document-link" href="./privacy/">
+          <span>개인정보처리방침</span><span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </nav>
+
+      <section class="contact">
+        <h2>운영자 및 문의처</h2>
+        <p>샐러드76 · 고객센터 <a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></p>
+        <p><a href="tel:010-3299-2683">010-3299-2683</a></p>
+      </section>
+
+      <p class="footer">SAM 생윤·윤사 서비스의 공식 법적 고지 페이지입니다.</p>
+    </article>
+  </main>
+</body>
+</html>
