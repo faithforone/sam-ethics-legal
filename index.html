@@ -28,7 +28,7 @@
       line-height: 1.75;
     }
     a { color: var(--accent); }
-    .shell { width: min(840px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .shell { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
     .paper {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -38,8 +38,10 @@
     }
     .eyebrow { margin: 0 0 8px; color: var(--accent); font-size: 14px; font-weight: 800; letter-spacing: .02em; }
     h1 { margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.2; letter-spacing: -.045em; }
+    h2 { margin: 0 0 10px; font-size: 20px; letter-spacing: -.02em; }
     .lead { margin: 16px 0 0; color: var(--muted); font-size: 17px; }
-    .documents { display: grid; gap: 12px; margin: 34px 0 0; }
+    .notice { margin: 24px 0 0; padding: 16px 18px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: #27466f; }
+    .documents { display: grid; gap: 12px; margin: 32px 0 0; }
     .document-link {
       display: flex;
       align-items: center;
@@ -55,14 +57,21 @@
     }
     .document-link:hover { border-color: #a9c2eb; background: var(--accent-soft); }
     .arrow { color: var(--accent); font-size: 20px; line-height: 1; }
-    .contact { margin: 34px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
-    .contact h2 { margin: 0 0 8px; font-size: 19px; }
-    .contact p { margin: 4px 0; color: var(--muted); }
+    .section { margin: 34px 0 0; padding-top: 26px; border-top: 1px solid var(--line); }
+    .flow { margin: 10px 0 0; padding-left: 22px; }
+    .flow li + li { margin-top: 7px; }
+    .business-info { display: grid; grid-template-columns: minmax(130px, 190px) 1fr; margin: 14px 0 0; border-top: 1px solid var(--line); }
+    .business-info dt, .business-info dd { margin: 0; padding: 11px 10px; border-bottom: 1px solid var(--line); }
+    .business-info dt { color: var(--muted); font-weight: 700; }
+    .business-info dd { overflow-wrap: anywhere; }
     .footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
     @media (max-width: 600px) {
-      .shell { width: min(100% - 20px, 840px); padding: 18px 0 44px; }
+      .shell { width: min(100% - 20px, 900px); padding: 18px 0 44px; }
       .paper { padding: 24px 18px; border-radius: 18px; }
       .lead { font-size: 16px; }
+      .business-info { grid-template-columns: 1fr; }
+      .business-info dt { padding-bottom: 2px; border-bottom: 0; }
+      .business-info dd { padding-top: 2px; }
     }
   </style>
 </head>
@@ -71,7 +80,9 @@
     <article class="paper">
       <p class="eyebrow">SAM 생윤·윤사</p>
       <h1>법적 고지</h1>
-      <p class="lead">서비스 이용약관과 개인정보처리방침을 확인할 수 있습니다.</p>
+      <p class="lead">서비스 이용약관과 개인정보처리방침, 운영자 정보를 누구나 확인할 수 있습니다.</p>
+
+      <p class="notice"><strong>AI 이용 안내:</strong> 일부 주관식 답안은 이용자가 계정별 최초 1회 국외이전에 선택 동의한 경우에만 생성형 AI를 이용해 의미를 판정합니다. 만 14세 이상 18세 미만 회원은 법정대리인과 관련 안내를 함께 읽고 동의를 얻은 경우에만 AI 기능을 선택합니다. AI 결과는 학습용 참고자료이며 오류가 있을 수 있고, 공식 성적·입시·자격 판단에 사용되지 않습니다.</p>
 
       <nav class="documents" aria-label="법적 문서">
         <a class="document-link" href="./terms/">
@@ -80,15 +91,38 @@
         <a class="document-link" href="./privacy/">
           <span>개인정보처리방침</span><span class="arrow" aria-hidden="true">›</span>
         </a>
+        <a class="document-link" href="https://sam-ethics.vercel.app/">
+          <span>SAM 생윤·윤사 서비스</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
       </nav>
 
-      <section class="contact">
-        <h2>운영자 및 문의처</h2>
-        <p>샐러드76 · 고객센터 <a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></p>
-        <p><a href="tel:010-3299-2683">010-3299-2683</a></p>
+      <section class="section">
+        <h2>서비스 이용 흐름</h2>
+        <ol class="flow">
+          <li>로그인 없이 공개 학습 위키와 서비스 소개를 둘러봅니다.</li>
+          <li>만 14세 이상 이용자는 초대 링크 없이 카카오 계정으로 가입하고, 기존 회원은 카카오·학생 아이디·토스 계정으로 로그인합니다.</li>
+          <li>문제를 풀고 채점 결과, 오답 복구, 진도, 복습 일정과 학습 기록을 확인합니다.</li>
+          <li>AI 주관식 의미 채점은 최초 이용 시 별도 선택 동의를 거친 계정에서만 작동하며, 동의하지 않으면 답안을 전송하지 않고 “모르겠어요”로 계속 진행할 수 있습니다.</li>
+          <li>승인된 랭킹 닉네임, 월간 XP, 연속 학습일, 티어와 순위는 로그인한 회원 사이에 표시됩니다.</li>
+          <li>개인정보 열람·정정·삭제, AI 판정 설명·검토, 회원 탈퇴는 아래 고객센터에서 요청할 수 있습니다.</li>
+        </ol>
       </section>
 
-      <p class="footer">SAM 생윤·윤사 서비스의 공식 법적 고지 페이지입니다.</p>
+      <section class="section">
+        <h2>사업자 및 고객센터 정보</h2>
+        <dl class="business-info">
+          <dt>상호</dt><dd>샐러드76</dd>
+          <dt>대표자</dt><dd>김승은</dd>
+          <dt>사업자등록번호</dt><dd>367-04-03645</dd>
+          <dt>업태</dt><dd>정보통신업</dd>
+          <dt>종목</dt><dd>응용 소프트웨어 개발 및 공급업</dd>
+          <dt>사업장 주소</dt><dd>서울특별시 서초구 동광로 173, 302호</dd>
+          <dt>전화번호</dt><dd><a href="tel:010-3299-2683">010-3299-2683</a></dd>
+          <dt>이메일</dt><dd><a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></dd>
+        </dl>
+      </section>
+
+      <p class="footer">시행일: 2026년 9월 16일 · SAM 생윤·윤사 서비스의 공식 법적 고지 페이지입니다.<br>2026년 9월 16일: 초대 전용 베타 가입을 종료하고 카카오 공개 가입으로 전환</p>
     </article>
   </main>
 </body>

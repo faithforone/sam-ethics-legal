@@ -15,9 +15,11 @@
       --line: #e2e7ec;
       --accent: #2864c7;
       --accent-soft: #eef4ff;
+      --warning: #8a4b08;
+      --warning-soft: #fff7e8;
     }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--bg);
@@ -28,7 +30,7 @@
       line-height: 1.78;
     }
     a { color: var(--accent); }
-    .shell { width: min(840px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    .shell { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
     .paper {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -40,7 +42,8 @@
     h1 { margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.2; letter-spacing: -.045em; }
     .meta { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
     .nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 28px 0 0; padding: 15px 17px; border: 1px solid var(--line); border-radius: 13px; background: #fbfcfe; font-size: 14px; font-weight: 700; }
-    .section { padding-top: 30px; }
+    .summary { margin: 24px 0 0; padding: 16px 18px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: #27466f; }
+    .section { padding-top: 30px; scroll-margin-top: 24px; }
     .section + .section { margin-top: 28px; border-top: 1px solid var(--line); }
     h2 { margin: 0 0 12px; font-size: 21px; line-height: 1.4; letter-spacing: -.025em; }
     h3 { margin: 22px 0 8px; font-size: 17px; line-height: 1.5; }
@@ -52,14 +55,20 @@
     .record h3 { margin: 0 0 6px; color: var(--ink); }
     .record p { margin: 4px 0; }
     .record strong { color: #34495e; }
+    .table-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 14px; line-height: 1.65; }
+    th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: #f7f9fc; color: #34495e; font-weight: 800; }
+    tr:last-child td { border-bottom: 0; }
     .note { margin: 14px 0; padding: 14px 16px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: #27466f; }
-    .business-info { display: grid; grid-template-columns: minmax(130px, 180px) 1fr; margin: 14px 0 0; border-top: 1px solid var(--line); }
+    .warning { margin: 14px 0; padding: 14px 16px; border-left: 4px solid #d27a0c; background: var(--warning-soft); color: var(--warning); }
+    .business-info { display: grid; grid-template-columns: minmax(150px, 200px) 1fr; margin: 14px 0 0; border-top: 1px solid var(--line); }
     .business-info dt, .business-info dd { margin: 0; padding: 12px 10px; border-bottom: 1px solid var(--line); }
     .business-info dt { color: var(--muted); font-weight: 700; }
     .business-info dd { overflow-wrap: anywhere; }
     .footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     @media (max-width: 600px) {
-      .shell { width: min(100% - 20px, 840px); padding: 18px 0 44px; }
+      .shell { width: min(100% - 20px, 960px); padding: 18px 0 44px; }
       .paper { padding: 24px 18px; border-radius: 18px; }
       .business-info { grid-template-columns: 1fr; }
       .business-info dt { padding-bottom: 3px; border-bottom: 0; }
@@ -72,156 +81,310 @@
     <article class="paper">
       <p class="eyebrow">SAM 생윤·윤사</p>
       <h1>개인정보처리방침</h1>
-      <p class="meta">시행일: 2026년 8월 19일 · 최종 수정일: 2026년 8월 19일</p>
+      <p class="meta">시행일: 2026년 9월 16일 · 최종 수정일: 2026년 9월 16일</p>
 
       <nav class="nav" aria-label="문서 이동">
         <a href="../">법적 고지 홈</a>
         <a href="../terms/">서비스 이용약관</a>
+        <a href="https://sam-ethics.vercel.app/">서비스로 이동</a>
       </nav>
 
-      <section class="section">
+      <p class="summary">샐러드76(이하 “운영자”)는 「개인정보 보호법」 등 관계 법령에 따라 “SAM 생윤·윤사” 이용자의 개인정보를 처리합니다. 이 문서는 처리 현황을 공개하는 <strong>개인정보처리방침</strong>이며, 그 자체가 동의서는 아닙니다. 동의가 법적 근거인 처리는 가입 화면 또는 AI 기능 최초 이용 화면에서 다른 내용과 구분하여 별도로 동의를 받습니다.</p>
+
+      <section class="section" id="purpose">
         <h2>1. 개인정보 처리 목적</h2>
-        <p>샐러드76(이하 “운영자”)는 “SAM 생윤·윤사” 서비스 이용자의 개인정보를 중요하게 여기며 「개인정보 보호법」 등 관계 법령을 준수합니다. 운영자는 다음 목적에 필요한 범위에서 개인정보를 처리합니다.</p>
         <ul>
-          <li>회원 식별, 로그인, 계정 연결 및 부정 이용 방지</li>
-          <li>문제 풀이, 채점, 피드백, 오답 재학습, 복습 및 진도 기록 제공</li>
-          <li>과목별 이용권 확인, 결제, 구매 복구 및 환불 처리</li>
-          <li>서비스 안정성, 오류 분석, 보안 및 고객 문의 대응</li>
+          <li>회원 가입, 본인 계정 식별, 로그인 연결, 세션 유지와 부정 이용 방지</li>
+          <li>문제풀이, 채점, 해설, 오답 복구, 복습 일정, 진도·취약점·학습 통계 제공</li>
+          <li>XP, 연속 학습일, 티어 및 회원 간 랭킹 운영</li>
+          <li>이용자가 선택한 경우 짧은 주관식 답안의 생성형 AI 의미 판정</li>
+          <li>서비스 안정성 확보, 오류·보안사고 분석, 문의·탈퇴·권리행사 처리</li>
         </ul>
       </section>
 
-      <section class="section">
-        <h2>2. 처리하는 개인정보 항목</h2>
+      <section class="section" id="items">
+        <h2>2. 처리하는 개인정보 항목, 법적 근거 및 보유기간</h2>
+        <p>운영자는 다음 범위에서 개인정보를 처리합니다. 이용자가 주관식 답안·닉네임·문의 내용에 스스로 입력하는 정보가 포함될 수 있으므로 개인정보나 민감정보를 입력하지 않아야 합니다.</p>
+
         <div class="records">
           <article class="record">
-            <h3>토스 로그인 및 회원 식별</h3>
-            <p><strong>항목:</strong> 토스 <span lang="en">userKey</span>, 로그인 연결 상태, 최근 로그인 시각 및 토스 로그인 과정에서 이용자가 동의한 범위의 회원 식별정보</p>
-            <p>이메일 scope가 활성화된 경우 이메일 정보가 로그인 과정에서 전달될 수 있으며, 서비스 계정 매핑 등에 이메일 해시값을 사용할 수 있습니다. 이메일을 필수 수집항목이라고 단정하지 않습니다.</p>
+            <h3>공개 페이지 방문 및 공통 서비스 이용</h3>
+            <p><strong>항목:</strong> IP 주소, 접속 일시, 요청 URL·경로, 유입 경로, 브라우저·운영체제·기기 종류, 대략적인 지역, 오류·보안 기록</p>
+            <p><strong>목적:</strong> 페이지 제공, 트래픽 집계, 오류 분석, 보안과 부정 이용 방지</p>
+            <p><strong>근거:</strong> 계약 이행 또는 계약 체결 과정의 조치, 운영자의 정당한 이익(「개인정보 보호법」 제15조 제1항 제4호·제6호)</p>
+            <p><strong>기간:</strong> Vercel 런타임 로그는 적용 요금제에 따라 1시간·1일·3일 또는 최대 30일 보관됩니다. 보안사고 조사 등 별도 보존 사유가 있으면 필요한 범위에서 해당 사유가 끝날 때까지 보관합니다.</p>
           </article>
+
           <article class="record">
-            <h3>학습 서비스</h3>
-            <p><strong>항목:</strong> Supabase 내부 회원 식별자, 학습 진도, 문제 풀이 및 정오답 기록, 시도 기록, 복습 상태 및 일정</p>
+            <h3>카카오 회원</h3>
+            <p><strong>필수 항목:</strong> 카카오 회원번호, 카카오 연결 상태, Supabase 내부 회원번호, 가입·최근 로그인·연결 해제 시각</p>
+            <p><strong>선택 항목:</strong> 이용자가 카카오 동의 화면에서 허용한 경우 이메일, 프로필 닉네임, 프로필 이미지가 Supabase Auth의 이메일·이용자 메타데이터·연결 계정 정보에 저장될 수 있습니다.</p>
+            <p><strong>목적:</strong> 카카오 계정으로 가입·로그인하고 동일 회원 계정을 연결하기 위함. 이메일을 허용하면 Supabase Auth가 동일한 검증 이메일의 인증 수단을 자동 연결하는 데 사용할 수 있습니다.</p>
+            <p><strong>근거:</strong> 필수 항목은 계약 이행(제15조 제1항 제4호), 선택 항목은 이용자의 선택 동의(제15조 제1항 제1호)</p>
+            <p><strong>기간:</strong> 회원 탈퇴 또는 해당 카카오 계정 연결 정보 삭제 시까지. 선택 동의를 철회하거나 삭제를 요청하면 법령상 보존 사유가 없는 한 삭제합니다.</p>
+            <p class="note"><strong>선택 동의 거부 안내:</strong> 프로필 닉네임·프로필 이미지는 계정 식별, 랭킹 또는 학습 기능에 사용하지 않습니다. 이메일은 위 Supabase Auth의 동일 이메일 인증 연결 외에는 랭킹·학습 기능에 사용하지 않습니다. 세 항목에 동의하지 않아도 카카오 회원번호만으로 가입·로그인할 수 있으며, 랭킹 닉네임은 가입할 때 별도로 정합니다.</p>
           </article>
+
           <article class="record">
-            <h3>유료 서비스 이용</h3>
-            <p><strong>항목:</strong> 구매 과목, 상품 식별정보, 주문·결제 식별정보, 결제 상태, 과목별 이용권 상태, 구매 복구 및 환불 처리에 필요한 정보</p>
-            <p>생활과 윤리 및 윤리와 사상 이용권은 별도로 관리될 수 있습니다.</p>
+            <h3>학생 아이디 회원</h3>
+            <p><strong>항목:</strong> 이용자가 정한 학생 아이디, 비밀번호의 일방향 암호화값, 인증 처리를 위한 내부용 주소, Supabase 내부 회원번호, 랭킹 닉네임, 약관 버전·동의 시각, 만 14세 이상 확인 여부·시각, 가입·최근 로그인 시각</p>
+            <p><strong>목적:</strong> 회원 가입·로그인, 계정 보호 및 가입 조건 확인</p>
+            <p><strong>근거:</strong> 계약 이행(제15조 제1항 제4호). 약관 동의와 연령 확인 기록은 계약과 법적 의무 이행 증빙</p>
+            <p><strong>기간:</strong> 회원 탈퇴 시까지. 비밀번호 원문은 운영자가 저장하거나 확인하지 않습니다.</p>
           </article>
+
           <article class="record">
-            <h3>고객 문의 및 서비스 운영</h3>
-            <p><strong>항목:</strong> 문의에 사용한 이메일 주소, 문의 내용 및 이용자가 문의 과정에서 제공한 정보, 서비스 이용 과정에서 생성되는 접속·오류·보안 관련 기록</p>
+            <h3>기존 토스 회원</h3>
+            <p><strong>항목:</strong> 토스 <span lang="en">userKey</span>, 이메일이 제공된 경우 그 이메일의 SHA-256 해시값, Supabase 내부 회원번호, 로그인 연결 상태, 최근 로그인 시각, 연결 해제 시각·사유</p>
+            <p><strong>목적:</strong> 기존 토스 회원의 계정 식별, 로그인 연결·해제 및 계정 연속성 유지</p>
+            <p><strong>근거:</strong> 계약 이행(제15조 제1항 제4호)</p>
+            <p><strong>기간:</strong> 회원 탈퇴 시까지. 운영자는 토스에서 제공되는 이메일 원문을 회원 매핑용 데이터베이스에 저장하지 않습니다.</p>
+          </article>
+
+          <article class="record">
+            <h3>초대형 베타 가입</h3>
+            <p><strong>항목:</strong> 초대 토큰의 해시값, 관리용 표시명, 생성자, 만료·사용 시각, 사용 회원번호</p>
+            <p><strong>목적:</strong> 초대 유효성 확인, 중복 사용 방지 및 베타 이용자 관리</p>
+            <p><strong>근거:</strong> 계약 체결 과정의 조치와 계약 이행(제15조 제1항 제4호)</p>
+            <p><strong>기간:</strong> 미사용 토큰은 만료 후 30일, 사용 기록은 회원 탈퇴 또는 베타 종료 후 1년 중 먼저 도래하는 때까지. 분쟁·부정 이용 조사가 진행 중이면 종료 시까지 별도 보관할 수 있습니다.</p>
+            <p class="note">현재 신규 가입에는 초대가 사용되지 않으며, 운영자가 이미 발급한 초대 링크는 계속 인정됩니다. 이 항목은 과거 발급분의 기록 보관·파기에만 적용됩니다.</p>
+          </article>
+
+          <article class="record">
+            <h3>학습 및 랭킹</h3>
+            <p><strong>항목:</strong> 과목·단원·문항·학습 단계, 제출 답안(짧은 주관식 포함), 정오답·불확실 결과, 제출·완료 시각, 풀이 시간, 진도·복습·취약점, XP·연속 학습일·티어·순위, AI 판정 결과·신뢰도·모델 정보·채점 기준 버전, 재도전·보정 기록</p>
+            <p><strong>목적:</strong> 채점, 피드백, 이어 학습, 개인화된 복습, 학습 통계와 랭킹 제공</p>
+            <p><strong>근거:</strong> 계약 이행(제15조 제1항 제4호)</p>
+            <p><strong>기간:</strong> 회원 탈퇴 시까지. 회원은 학습 기록 일부의 정정·삭제 또는 랭킹 제외를 요청할 수 있습니다.</p>
+          </article>
+
+          <article class="record">
+            <h3>DeepSeek 국외이전 선택 동의 기록</h3>
+            <p><strong>항목:</strong> 동의 문안 버전, 동의 시각</p>
+            <p><strong>목적:</strong> AI 주관식 기능 이용 의사 확인 및 동의 증빙</p>
+            <p><strong>근거:</strong> 국외이전 선택 동의(제28조의8 제1항 제1호) 및 법적 의무 이행</p>
+            <p><strong>기간:</strong> 동의 유지 중 보관하고 동의 철회 또는 회원 탈퇴 시 지체 없이 삭제합니다. 동의 버전과 시각은 서버가 관리하는 Supabase 계정 메타데이터에 기록됩니다.</p>
+          </article>
+
+          <article class="record">
+            <h3>문의와 권리행사</h3>
+            <p><strong>항목:</strong> 이름 또는 닉네임, 회신 이메일·전화번호, 문의·요청 내용, 첨부자료, 본인 확인 및 처리 이력</p>
+            <p><strong>목적:</strong> 문의, AI 판정 재검토, 개인정보 권리행사, 회원 탈퇴 및 분쟁 처리</p>
+            <p><strong>근거:</strong> 정보주체의 요청 처리와 법적 의무 이행</p>
+            <p><strong>기간:</strong> 회원 탈퇴 또는 문의·권리행사 처리 목적 달성 시까지. 불필요한 첨부자료는 확인 후 지체 없이 삭제합니다. 유료 서비스의 소비자 불만·분쟁 기록에 해당하는 경우에만 관계 법령에 따라 3년 보관합니다.</p>
           </article>
         </div>
       </section>
 
-      <section class="section">
-        <h2>3. 개인정보의 보유 및 이용기간</h2>
-        <ul>
-          <li>회원 식별정보와 학습 기록은 회원 탈퇴 시 또는 처리 목적이 달성될 때까지 보유·이용합니다.</li>
-          <li>유료 서비스의 주문·결제 및 이용권 정보는 결제, 구매 복구, 환불 및 분쟁 대응에 필요한 기간 동안 보유하며, 관계 법령에 따라 보존해야 하는 경우에는 해당 기간 동안 별도로 보관합니다.</li>
-          <li>고객 문의 정보는 문의 처리와 분쟁 대응에 필요한 기간 동안 보유한 뒤 파기합니다. 법령상 보존기간이 있으면 그 기간을 따릅니다.</li>
-          <li>서비스 운영·보안 로그는 목적 달성에 필요한 기간 동안 보유하며, 법령 또는 실제 운영정책에 따라 별도 보존기간이 정해지는 경우 그 기간을 적용합니다.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>4. 개인정보의 수집 방법</h2>
+      <section class="section" id="collection">
+        <h2>3. 개인정보 수집 방법과 출처</h2>
         <ol>
-          <li>토스 로그인 과정에서 이용자의 동의를 거쳐 토스로부터 제공받는 방법</li>
-          <li>이용자가 서비스에서 문제를 풀거나 기능을 이용하면서 생성되는 방법</li>
-          <li>유료 서비스 구매, 구매 복구 또는 환불 과정에서 앱인토스·앱마켓 등 결제 연동을 통해 확인하는 방법</li>
-          <li>고객센터 문의 과정에서 이용자가 직접 제공하는 방법</li>
+          <li>카카오·토스 로그인 과정에서 이용자가 허용한 범위의 정보를 해당 사업자로부터 제공받습니다.</li>
+          <li>카카오 가입 과정의 만 14세 이상 확인과 약관 동의, 닉네임 설정, 문제풀이와 문의 과정에서 이용자가 직접 입력합니다.</li>
+          <li>서비스·쿠키·서버가 로그인, 학습, 접속, 오류·보안 기록을 자동으로 생성합니다.</li>
+          <li>DeepSeek에는 제8조의 선택 동의를 완료한 회원이 AI 주관식 답안을 제출할 때만 필요한 정보를 전송합니다.</li>
         </ol>
       </section>
 
-      <section class="section">
-        <h2>5. 법령에 따른 거래기록의 보존</h2>
-        <p>전자상거래 관련 법령에 따라 다음 기록은 회원 탈퇴 후에도 법정 기간 동안 별도로 보관할 수 있습니다.</p>
+      <section class="section" id="retention">
+        <h2>4. 보유기간, 법정 보존 및 파기 기준</h2>
+        <p>제2조에서 정한 기간이 끝나거나 처리 목적이 달성되면 지체 없이 파기합니다. 다만 다음 법정 기록은 회원 탈퇴 후에도 다른 정보와 분리하여 해당 기간 동안 보존할 수 있습니다. 현재 베타에는 결제 기능이 없으며, 향후 유료 서비스를 시작하는 경우에 적용됩니다.</p>
         <div class="records">
-          <article class="record"><strong>표시·광고에 관한 기록</strong><p>6개월</p></article>
-          <article class="record"><strong>계약 또는 청약철회 등에 관한 기록</strong><p>5년</p></article>
-          <article class="record"><strong>대금결제 및 재화 등의 공급에 관한 기록</strong><p>5년</p></article>
-          <article class="record"><strong>소비자의 불만 또는 분쟁처리에 관한 기록</strong><p>3년</p></article>
+          <article class="record"><strong>표시·광고에 관한 기록</strong><p>6개월(전자상거래 관련 법령)</p></article>
+          <article class="record"><strong>계약 또는 청약철회, 대금결제 및 재화 등의 공급에 관한 기록</strong><p>5년(전자상거래 관련 법령)</p></article>
+          <article class="record"><strong>소비자 불만 또는 분쟁처리에 관한 기록</strong><p>3년(전자상거래 관련 법령)</p></article>
+        </div>
+        <p>전자적 정보는 복구하기 어렵도록 활성 데이터베이스에서 삭제하고, Supabase 정기 백업에 남은 사본은 적용 요금제의 복구기간이 끝나는 최대 30일 이내 덮어씁니다. 출력물이 있는 경우 분쇄 또는 소각합니다. 분쟁·수사·법적 의무로 보존하는 정보는 이용 중인 정보와 분리하고 접근을 제한합니다.</p>
+      </section>
+
+      <section class="section" id="visibility">
+        <h2>5. 서비스 내 공개와 제3자 제공</h2>
+        <ol>
+          <li>로그인한 회원 사이에는 회원이 정한 랭킹 닉네임, 월간 XP, 연속 학습일, 티어와 순위가 표시될 수 있습니다. 실명, 로그인 아이디, 이메일, 카카오 회원번호, 토스 <span lang="en">userKey</span>는 표시하지 않습니다.</li>
+          <li>회원은 닉네임 변경이나 랭킹 제외를 고객센터에 요청할 수 있습니다. 닉네임에는 실명, 연락처, 학교·반 등 식별 가능한 정보를 넣지 않아야 합니다.</li>
+          <li>운영자는 원칙적으로 개인정보를 제3자에게 제공하지 않습니다. 이용자의 별도 동의가 있거나 법령이 허용·요구하는 경우에만 필요한 범위에서 제공합니다.</li>
+          <li>제6조의 Supabase·Vercel·DeepSeek는 운영자의 서비스 제공 지시에 따라 업무를 처리하는 수탁자로 관리합니다. 이들이 독립된 목적으로 정보를 이용하도록 제공하는 구조로 변경되면 별도 법적 근거를 마련하고 이 방침을 고칩니다.</li>
+        </ol>
+      </section>
+
+      <section class="section" id="processors">
+        <h2>6. 개인정보 처리업무의 위탁</h2>
+        <p>운영자는 수탁자가 목적 밖에서 개인정보를 처리하지 않도록 계약과 공개 정책을 확인하고, 보호조치와 재위탁 현황을 점검합니다.</p>
+        <div class="table-wrap" role="region" aria-label="처리위탁 현황" tabindex="0">
+          <table>
+            <thead>
+              <tr><th>수탁자</th><th>위탁업무</th><th>처리 항목</th><th>기간</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Supabase, Inc.<br><a href="https://supabase.com/privacy" rel="noreferrer">개인정보 안내</a></td>
+                <td>회원 인증, 데이터베이스, 계정·학습 데이터 저장, 백업, 보안 및 기술 지원</td>
+                <td>회원 인증정보, 동의 기록, 초대·학습·랭킹·문의 처리 데이터</td>
+                <td>회원 탈퇴 또는 위탁계약 종료 시까지. 활성 데이터는 지체 없이 삭제하고 정기 백업은 최대 30일 이내 덮어쓰기</td>
+              </tr>
+              <tr>
+                <td>Vercel Inc.<br><a href="https://vercel.com/legal/privacy-policy" rel="noreferrer">개인정보 안내</a></td>
+                <td>웹 호스팅, 전송, 보안, 런타임 로그 및 익명화된 웹 이용 통계</td>
+                <td>접속·요청·오류·기기 정보와 응답 처리에 필요한 일시적 애플리케이션 데이터</td>
+                <td>런타임 로그는 적용 요금제에 따라 최대 30일, 웹 분석 방문자 식별값은 24시간 후 폐기, 집계 통계는 서비스 운영기간</td>
+              </tr>
+              <tr>
+                <td>Hangzhou DeepSeek Artificial Intelligence Co., Ltd.<br><a href="https://cdn.deepseek.com/policies/en-US/deepseek-open-platform-terms-of-service.html" rel="noreferrer">Open Platform 약관</a> · <a href="https://cdn.deepseek.com/policies/ko-KR/deepseek-privacy-policy.html" rel="noreferrer">개인정보 안내</a></td>
+                <td>별도 선택 동의한 회원의 짧은 주관식 의미 판정</td>
+                <td>제7조의 무작위 식별자, 문항·채점 기준, 짧은 답안</td>
+                <td>운영자는 API 응답 완료 후 별도 대화 기록으로 저장하지 않음. DeepSeek는 다운스트림 입력의 고정 최대기간을 공개하지 않아 실제 제공 전 계약·공식 답변으로 확인</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <section class="section">
-        <h2>6. 개인정보의 제3자 제공</h2>
-        <p>운영자는 원칙적으로 이용자의 개인정보를 수집·이용 목적의 범위 안에서 처리하며, 이용자의 별도 동의가 있거나 법령에 근거가 있는 경우를 제외하고 제3자에게 제공하지 않습니다.</p>
-        <p>토스 로그인 및 앱인토스 결제 과정에서 비바리퍼블리카 또는 앱마켓·결제 사업자가 자신의 서비스 제공을 위해 독립적으로 처리하는 정보에는 해당 사업자의 개인정보처리방침이 적용될 수 있습니다.</p>
-      </section>
+      <section class="section" id="overseas">
+        <h2>7. 개인정보의 국외 이전</h2>
+        <p>서비스의 주 데이터베이스와 기본 웹 실행 지역은 대한민국 서울로 설정되어 있습니다. 다만 해외 사업자의 관리·지원·보안 인프라가 원격으로 처리하거나, 이용자가 선택 동의한 AI 요청이 중국으로 전송되는 다음 국외 이전이 발생합니다.</p>
 
-      <section class="section">
-        <h2>7. 개인정보 처리업무의 위탁</h2>
-        <p>운영자는 서비스 제공에 필요한 범위에서 다음과 같이 개인정보 처리업무를 위탁할 수 있습니다.</p>
         <div class="records">
           <article class="record">
             <h3>Supabase, Inc.</h3>
-            <p><strong>위탁업무:</strong> 회원 식별 지원, 서비스 데이터베이스 및 학습 기록의 저장·처리</p>
-            <p><strong>보유·이용기간:</strong> 위탁 목적 달성 또는 관련 계약 종료 시까지. 법령상 보존이 필요한 정보는 해당 기간 동안 보관합니다.</p>
+            <p><strong>이전받는 자·연락처:</strong> Supabase, Inc. 및 기술 지원 계열사 Supabase Pte. Ltd. · <a href="mailto:privacy@supabase.io">privacy@supabase.io</a></p>
+            <p><strong>국가:</strong> 미국, 싱가포르(주 데이터베이스 저장 지역은 AWS 서울 <span lang="en">ap-northeast-2</span>)</p>
+            <p><strong>항목·목적:</strong> 제6조의 회원 인증·계정·학습 데이터에 대한 시스템 관리, 보안, 장애 대응 및 기술 지원</p>
+            <p><strong>시기·방법:</strong> 가입과 서비스 이용 중 필요한 때 암호화된 네트워크를 통한 저장 또는 권한 통제된 원격 접근</p>
+            <p><strong>근거:</strong> 회원과의 계약 이행에 필요한 처리위탁·보관(「개인정보 보호법」 제28조의8 제1항 제3호)</p>
+            <p><strong>기간:</strong> 회원 탈퇴 또는 위탁계약 종료 시까지. 활성 데이터는 지체 없이 삭제하고 정기 백업은 최대 30일 이내 덮어씁니다. 법정 보존 정보는 예외입니다.</p>
           </article>
+
           <article class="record">
-            <h3>추가 외부 인프라 사업자</h3>
-            <p>운영자가 호스팅, 오류 분석 또는 서비스 운영을 위해 추가 외부 사업자를 이용하는 경우에는 실제 운영 구조에 맞춰 사업자명, 위탁업무, 보유·이용기간을 이 방침 또는 서비스 내 별도 안내로 공개합니다.</p>
+            <h3>Vercel Inc.</h3>
+            <p><strong>이전받는 자·연락처:</strong> Vercel Inc. · <a href="mailto:privacy@vercel.com">privacy@vercel.com</a></p>
+            <p><strong>국가:</strong> 대한민국 서울 실행 지역과 미국 소재 관리·보안·분석 인프라</p>
+            <p><strong>항목·목적:</strong> 접속·요청·오류·기기 정보와 일시적 응답 데이터의 웹 전송, 보안, 장애 분석 및 익명화된 이용 통계</p>
+            <p><strong>시기·방법:</strong> 페이지 접속과 API 이용 때마다 HTTPS 통신 및 서비스 운영을 위한 원격 처리</p>
+            <p><strong>근거:</strong> 회원과의 계약 이행 및 이용자가 요청한 웹서비스 제공에 필요한 처리위탁(제28조의8 제1항 제3호)</p>
+            <p><strong>기간:</strong> 제6조의 요금제별 로그·분석 보유기간 및 위탁계약 종료 시까지</p>
+          </article>
+
+          <article class="record">
+            <h3>DeepSeek AI</h3>
+            <p><strong>이전받는 자·연락처:</strong> Hangzhou DeepSeek Artificial Intelligence Co., Ltd. · <a href="mailto:privacy@deepseek.com">privacy@deepseek.com</a></p>
+            <p><strong>국가:</strong> 중국</p>
+            <p><strong>항목:</strong> 무작위 요청·제출 식별자, 문항 단계, 학생에게 표시된 질문, 모범·허용답안, 필수 개념 묶음, 모순 표현, 채점 기준 요약값, 회원이 쓴 짧은 답안</p>
+            <p><strong>목적:</strong> 짧은 주관식 답안의 의미 판정과 정답·오답·불확실 여부 및 신뢰도 반환</p>
+            <p><strong>시기·방법:</strong> 계정별 최초 1회 선택 동의를 완료한 뒤 회원이 AI 주관식 답안을 제출할 때마다 HTTPS API로 전송</p>
+            <p><strong>근거:</strong> 개인정보 국외이전에 대한 별도 선택 동의(제28조의8 제1항 제1호)</p>
+            <p><strong>기간:</strong> 운영자는 API 응답 완료 후 DeepSeek 입력·출력을 별도 대화 기록으로 저장하지 않고 다음 요청에 재사용하지 않습니다. DeepSeek의 Open Platform 약관과 일반 개인정보처리방침은 다운스트림 이용자 입력의 고정 최대 보유기간을 공개하지 않으며, 일반 개인정보처리방침은 해당 입력의 처리 규칙에 적용되지 않는다고 밝힙니다. 운영자는 실제 회원에게 기능을 제공하기 전에 계약 또는 공식 지원 답변으로 최대기간을 확인하여 동의 화면과 이 방침에 반영합니다.</p>
+            <p><strong>모델 학습:</strong> 운영자는 답안을 모델 학습·개선 목적으로 전송하지 않습니다. 다만 DeepSeek는 다운스트림 API 입력을 모델 학습에서 제외한다고 공개적으로 보장하지 않으므로, 실제 회원에게 기능을 제공하기 전에 학습 미이용 또는 유효한 학습 거부 설정을 계약·공식 지원 답변으로 확인합니다. 이를 확인할 수 없으면 고정 보유기간과 학습 미이용을 보장하는 다른 사업자를 사용합니다.</p>
+            <p><strong>직접 식별정보 제외:</strong> 운영자는 이름, 랭킹 닉네임, 카카오 회원번호, 학생 아이디, 이메일, Supabase 회원번호, 학교·반, 연락처를 API 요청 본문에 넣지 않습니다. 답안에 이용자가 직접 적은 정보는 전송될 수 있으므로 개인정보를 입력하지 않아야 합니다.</p>
           </article>
         </div>
+
+        <p class="warning"><strong>DeepSeek 이전 거부·철회:</strong> 국외이전 동의는 회원 가입 조건이 아닌 선택 사항입니다. 신규·기존 회원 모두 첫 AI 주관식 이용 시 계정별로 한 번 동의 여부를 정합니다. 동의하지 않거나 이후 고객센터에서 철회하면 해당 답안을 DeepSeek에 보내지 않고 “모르겠어요”로 계속 진행할 수 있으며, O/X·객관식·위키·학습기록 등 다른 기능은 계속 이용할 수 있습니다. 만 14세 이상 18세 미만 회원은 DeepSeek의 이용 조건에 따라 법정대리인과 관련 약관·안내를 함께 읽고 동의를 얻은 경우에만 AI 기능에 동의해야 합니다. 이전받는 자·국가·항목·목적·보유기간 등 기존 동의 범위를 벗어나는 내용이 바뀌면 적용 전에 새로 동의를 받습니다.</p>
       </section>
 
-      <section class="section">
-        <h2>8. 개인정보의 국외 이전</h2>
-        <p>클라우드·호스팅 서비스의 실제 운영 설정에 따라 개인정보가 국외에서 저장 또는 처리될 수 있습니다. 국외 이전이 발생하는 경우 운영자는 「개인정보 보호법」 등 관계 법령에 따라 이전받는 자, 이전 국가, 이전 항목, 목적, 시기·방법 및 보유기간을 이용자가 확인할 수 있도록 고지하거나 필요한 동의 절차를 진행합니다.</p>
-        <p class="note">현재 공개본에서는 실제 production 설정으로 확인되지 않은 국가 또는 서버 리전을 임의로 특정하지 않습니다. 운영 구조가 확정되거나 변경되면 그 사실에 맞춰 이 방침을 갱신합니다.</p>
-      </section>
-
-      <section class="section">
-        <h2>9. 개인정보의 파기</h2>
+      <section class="section" id="automated-decision">
+        <h2>8. 생성형 AI 및 자동화된 학습 판정</h2>
         <ol>
-          <li>개인정보의 처리 목적이 달성되거나 보유기간이 끝난 경우 지체 없이 파기합니다. 다만 관계 법령에 따라 보존해야 하는 정보는 다른 개인정보와 분리하여 해당 기간 동안 보관합니다.</li>
-          <li>전자적 파일은 복구 또는 재생이 어렵도록 안전한 방법으로 삭제하며, 종이 문서가 있는 경우 분쇄 또는 소각 등의 방법으로 파기합니다.</li>
-          <li>토스 로그인 연결 해제는 서비스와 토스 계정의 연결을 끊는 절차이며 회원 탈퇴와 동일하지 않을 수 있습니다. 회원 탈퇴 및 개인정보 삭제를 원하는 경우 서비스 또는 고객센터가 안내하는 절차를 이용할 수 있습니다.</li>
+          <li><strong>AI 사용 사실과 대상:</strong> 생성형 AI는 DeepSeek 국외이전에 선택 동의하고 짧은 주관식 답안을 제출한 회원에게만 사용됩니다. AI 기반 기능이라는 사실은 최초 이용 전에 알기 쉽게 표시합니다.</li>
+          <li><strong>목적과 처리 과정:</strong> 서비스는 무작위 식별자와 답안·문항별 채점 기준을 DeepSeek에 전송하고, 반환된 정답·오답·불확실 판정 및 신뢰도를 해당 학습 기록에 연결합니다. 문항 답안과 모범·허용답안의 의미 일치, 필수 개념 포함, 모순 표현 존재 여부를 기준으로 처리합니다.</li>
+          <li><strong>안전 기준:</strong> 불확실하거나 서비스 기준 신뢰도 0.85 미만인 AI 결과는 오답으로 확정하지 않고 다시 제출할 수 있게 합니다. 민감정보와 만 14세 미만 아동의 정보는 판정 대상으로 예정하지 않습니다.</li>
+          <li><strong>영향 범위:</strong> 판정은 해당 문항의 학습 피드백, 진도, XP·랭킹에 영향을 줄 수 있지만 학교 성적, 입학·진급·장학·징계·자격, 결제 또는 회원 자격을 결정하지 않습니다.</li>
+          <li><strong>한계:</strong> 생성형 AI와 자동 판정에는 오해, 누락, 편향 또는 일관되지 않은 결과가 있을 수 있습니다. AI 판정은 학습용 참고자료이며 공식 성적이나 중요한 의사결정의 근거가 아닙니다.</li>
+          <li><strong>AI 사용 선택:</strong> 회원은 DeepSeek 국외이전 동의를 거부하거나 철회하여 이후 AI 판정을 중단할 수 있습니다. 이는 선택 동의에 따른 통제이며, “모르겠어요”로 AI 전송 없이 학습을 계속할 수 있습니다.</li>
+          <li><strong>설명·사람의 재검토:</strong> 회원은 고객센터에서 판정 기준·처리 과정에 관한 설명과 사람의 재검토·학습 기록 정정을 요청할 수 있습니다. 운영자는 법 적용 여부와 관계없이 자율적인 보호 절차로 답안과 적용된 채점 기준을 확인해 결과를 알리고 필요한 경우 기록을 바로잡습니다.</li>
+          <li><strong>법정 권리:</strong> 해당 기능이 「개인정보 보호법」 제37조의2의 자동화된 결정 요건을 충족하는 경우 회원은 법령이 정한 범위에서 자동화된 결정에 대한 거부, 설명 및 검토를 요구할 수 있습니다. 특히 권리·의무에 중대한 영향을 미치는 자동화된 결정에는 법정 거부권과 결정 미적용 또는 사람에 의한 재처리 절차가 적용됩니다.</li>
+        </ol>
+        <p class="note">현재 판정은 내부 학습 피드백에 한정되고 중요한 자격이나 권리·의무를 결정하지 않습니다. 운영자는 법령상 “완전히 자동화된 결정” 해당 여부와 관계없이 AI 사용 선택, 설명과 사람의 재검토 절차를 자율적으로 제공합니다. 중대한 영향을 미치는 용도로 변경할 경우 적용 전에 기준과 법정 권리행사 방법을 다시 공개하고 필요한 동의·인적 재처리 등 보호조치를 마련합니다.</p>
+      </section>
+
+      <section class="section" id="children">
+        <h2>9. 만 14세 미만 아동의 개인정보</h2>
+        <ol>
+          <li>회원 기능은 만 14세 이상만 이용할 수 있으며, 가입 화면에서 이를 확인합니다. 운영자는 만 14세 미만 아동을 대상으로 개인정보를 수집하거나 법정대리인 동의를 받아 회원을 운영하지 않습니다.</li>
+          <li>만 14세 미만의 가입 사실을 알게 되면 해당 계정의 이용을 제한하고, 법정대리인 확인 등 필요한 절차를 거쳐 법령상 보존 사유가 없는 개인정보를 지체 없이 삭제합니다.</li>
+          <li>만 14세 미만 아동은 로그인 없이 이용 가능한 공개 학습 위키만 이용해 주세요. 아동 정보가 잘못 수집된 경우 법정대리인은 고객센터로 삭제를 요청할 수 있습니다.</li>
+          <li>만 14세 이상 18세 미만 회원은 서비스 회원 기능을 이용할 수 있지만, DeepSeek 이용 조건에 따라 법정대리인과 AI 관련 약관·국외이전 안내를 함께 읽고 법정대리인의 동의를 얻은 경우에만 AI 주관식 기능을 선택해야 합니다. 그렇지 않으면 “모르겠어요”로 AI 전송 없이 학습할 수 있습니다.</li>
         </ol>
       </section>
 
-      <section class="section">
-        <h2>10. 정보주체의 권리 및 행사 방법</h2>
+      <section class="section" id="rights">
+        <h2>10. 정보주체의 권리와 행사 방법</h2>
         <ol>
-          <li>이용자는 자신의 개인정보에 대해 열람, 정정·삭제, 처리정지, 동의 철회 등 관계 법령에서 정한 권리를 행사할 수 있습니다.</li>
-          <li>권리 행사는 서비스 내 기능 또는 고객센터를 통해 요청할 수 있으며, 운영자는 관계 법령에 따라 필요한 본인 확인 후 처리합니다.</li>
-          <li>법령에 따라 보존해야 하는 정보 등은 삭제 요청이 제한될 수 있으며, 그 사유가 있는 경우 이용자에게 안내합니다.</li>
+          <li>이용자는 개인정보 열람, 전송 요구, 정정·삭제, 처리정지, 동의 철회 등 관계 법령이 정한 권리를 행사할 수 있습니다.</li>
+          <li>AI 판정이 「개인정보 보호법」 제37조의2의 요건에 해당하면 법령이 정한 거부·설명·검토 요구권을 행사할 수 있습니다. 그 요건에 해당하지 않는 경우에도 제8조의 자율적인 설명·사람의 재검토를 요청할 수 있습니다.</li>
+          <li>서비스 내 제공되는 기능 또는 제14조의 고객센터로 요청할 수 있습니다. 운영자는 본인 또는 정당한 대리인인지 필요한 범위에서 확인한 뒤 지체 없이 처리하고, 법령에 따른 제한 사유가 있으면 그 이유를 알립니다.</li>
+          <li>회원 탈퇴를 요청하면 계정과 학습 기록을 삭제합니다. 카카오·토스에서 연결을 해제하거나 서비스에서 로그아웃하는 것만으로는 회원 탈퇴와 개인정보 삭제가 완료되지 않습니다.</li>
+          <li>DeepSeek 국외이전 동의만 별도로 철회할 수 있습니다. 철회 전에 적법하게 이루어진 처리에는 영향을 주지 않으며 이후 답안 전송은 중단됩니다.</li>
+          <li>다른 회원의 개인정보나 법령상 보존 의무가 있는 정보 등은 열람·삭제·처리정지 요구가 제한될 수 있습니다.</li>
         </ol>
       </section>
 
-      <section class="section">
-        <h2>11. 개인정보의 안전성 확보조치</h2>
-        <p>운영자는 개인정보 보호를 위해 접근권한 최소화, 인증정보 및 비밀정보의 서버 측 관리, 전송구간 암호화, 데이터베이스 접근통제, 보안 로그 관리 등 서비스 규모와 위험 수준에 맞는 기술적·관리적 보호조치를 시행합니다.</p>
-      </section>
-
-      <section class="section">
-        <h2>12. 쿠키 및 세션</h2>
+      <section class="section" id="destruction">
+        <h2>11. 개인정보 파기 절차 및 방법</h2>
         <ol>
-          <li>서비스는 로그인 세션 유지 및 보안을 위해 필요한 쿠키 또는 유사 저장기술을 사용할 수 있습니다.</li>
-          <li>이용자는 브라우저 또는 기기 설정을 통해 쿠키 저장을 제한할 수 있으나, 이 경우 로그인 등 일부 기능의 이용이 제한될 수 있습니다.</li>
+          <li>보유기간이 끝나거나 목적이 달성된 정보는 내부 확인 후 지체 없이 삭제합니다. 계정·학습 데이터는 활성 데이터베이스에서 먼저 삭제하고, Supabase 정기 백업 사본은 최대 30일 이내 복구 불가능한 상태로 덮어씁니다.</li>
+          <li>법정 보존 또는 분쟁 대응이 필요한 정보는 별도 영역으로 옮겨 목적 외 이용을 금지하고 기간 종료 후 삭제합니다.</li>
+          <li>전자 파일은 복구하기 어려운 기술적 방법으로 삭제하고 종이 출력물이 있는 경우 분쇄 또는 소각합니다.</li>
         </ol>
       </section>
 
-      <section class="section">
-        <h2>13. 개인정보 보호책임자 및 문의처</h2>
+      <section class="section" id="security">
+        <h2>12. 개인정보의 안전성 확보조치</h2>
+        <ul>
+          <li>서비스 운영에 필요한 최소 인원만 계정·데이터에 접근하도록 권한을 제한하고 접근 기록을 점검합니다.</li>
+          <li>비밀번호는 Supabase Auth에서 일방향 암호화하여 처리하고, API 비밀키와 관리자 인증정보는 브라우저에 노출하지 않습니다.</li>
+          <li>외부 통신은 HTTPS로 암호화하며 데이터베이스 접근통제, 행 단위 권한 정책, 보안 업데이트와 이상 요청 제한을 적용합니다.</li>
+          <li>DeepSeek 요청에서는 직접 식별자를 제외하고 무작위 요청·제출 식별자를 사용합니다.</li>
+          <li>개인정보 유출 등 사고가 발생하면 관계 법령에 따라 이용자와 관계 기관에 통지·신고하고 재발 방지 조치를 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="cookies">
+        <h2>13. 쿠키와 자동 수집 장치</h2>
+        <ol>
+          <li><strong>로그인 세션:</strong> Supabase Auth가 로그인 상태와 보안을 유지하는 데 필요한 세션 쿠키·저장정보를 사용합니다. 저장기간은 세션 또는 토큰 유효기간까지이며 로그아웃·탈퇴 시 삭제 또는 무효화됩니다.</li>
+          <li><strong>카카오 가입 확인:</strong> 카카오 가입 흐름 중 서버 검증을 위해 <span lang="en">HttpOnly</span>·<span lang="en">SameSite=Lax</span> 속성의 단기 쿠키를 사용할 수 있으며 약 10분 후 만료됩니다.</li>
+          <li><strong>Vercel Web Analytics:</strong> 제3자 쿠키를 사용하지 않고 페이지 경로, 유입 경로, 기기·브라우저·대략적 지역 등을 집계합니다. 방문자 식별을 위한 일시적 값은 24시간 후 폐기되며 개인별 행동 프로필을 만들기 위한 용도로 사용하지 않습니다.</li>
+          <li>브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 필수 세션 쿠키를 차단하면 로그인, 가입, 학습 기록 저장이 작동하지 않을 수 있습니다.</li>
+        </ol>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>14. 개인정보 보호책임자 및 사업자 정보</h2>
+        <p>개인정보, AI 판정 재검토, 국외이전 동의 철회, 회원 탈퇴와 권리행사는 아래 연락처로 요청할 수 있습니다.</p>
         <dl class="business-info">
-          <dt>개인정보 보호책임자</dt><dd>김승은</dd>
-          <dt>운영자</dt><dd>샐러드76</dd>
+          <dt>상호</dt><dd>샐러드76</dd>
+          <dt>대표자·개인정보 보호책임자</dt><dd>김승은</dd>
           <dt>사업자등록번호</dt><dd>367-04-03645</dd>
+          <dt>업태</dt><dd>정보통신업</dd>
+          <dt>종목</dt><dd>응용 소프트웨어 개발 및 공급업</dd>
           <dt>사업장 주소</dt><dd>서울특별시 서초구 동광로 173, 302호</dd>
-          <dt>이메일</dt><dd><a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></dd>
           <dt>전화번호</dt><dd><a href="tel:010-3299-2683">010-3299-2683</a></dd>
+          <dt>이메일</dt><dd><a href="mailto:skim0814@gmail.com">skim0814@gmail.com</a></dd>
         </dl>
       </section>
 
-      <section class="section">
-        <h2>14. 개인정보처리방침의 변경</h2>
-        <p>이 방침의 내용이 변경되는 경우 적용일과 주요 변경 내용을 서비스 내 또는 연결된 웹페이지를 통해 안내합니다. 이용자의 권리에 중대한 영향을 주는 변경은 관계 법령에 따라 필요한 사전 고지 또는 동의 절차를 진행합니다.</p>
+      <section class="section" id="remedies">
+        <h2>15. 권익침해 구제 방법</h2>
+        <p>개인정보 침해에 관한 상담이나 분쟁 해결이 필요한 경우 다음 기관에 문의할 수 있습니다.</p>
+        <ul>
+          <li>개인정보침해신고센터: 국번 없이 118 · <a href="https://privacy.kisa.or.kr/" rel="noreferrer">privacy.kisa.or.kr</a></li>
+          <li>개인정보분쟁조정위원회: 1833-6972 · <a href="https://www.kopico.go.kr/" rel="noreferrer">kopico.go.kr</a></li>
+          <li>대검찰청: 국번 없이 1301 · <a href="https://www.spo.go.kr/" rel="noreferrer">spo.go.kr</a></li>
+          <li>경찰청: 국번 없이 182 · <a href="https://ecrm.police.go.kr/" rel="noreferrer">ecrm.police.go.kr</a></li>
+        </ul>
       </section>
 
-      <p class="footer">이 방침은 SAM 생윤·윤사의 토스 로그인, 학습기록 및 과목별 유료 서비스 운영을 기준으로 작성되었습니다. <a href="../terms/">서비스 이용약관 보기</a></p>
+      <section class="section" id="changes">
+        <h2>16. 개인정보처리방침의 변경</h2>
+        <p>이 방침이 변경되면 적용일과 주요 변경 내용을 이 페이지 또는 서비스에서 안내합니다. 수집 항목·이용 목적·국외이전 등 이용자의 권리에 중대한 변경이 있으면 관계 법령이 요구하는 기간과 방법에 따라 사전 안내하고, 별도 동의가 요구되는 변경은 적용 전에 새로 동의를 받습니다.</p>
+        <ul>
+          <li>2026년 8월 19일: 최초 시행</li>
+          <li>2026년 8월 30일: 카카오·학생 아이디·기존 토스 로그인, 만 14세 이상 정책, Supabase·Vercel 처리, 랭킹 공개, DeepSeek 계정별 최초 1회 선택 동의와 국외이전, AI 판정 설명·재검토, 보유·파기·쿠키 내용을 실제 서비스 흐름에 맞게 전면 개정</li>
+          <li>2026년 9월 16일: 초대 전용 베타 가입을 종료하고 카카오 공개 가입으로 전환</li>
+        </ul>
+      </section>
+
+      <p class="footer">이 방침은 개인정보 처리 현황을 투명하게 공개하기 위한 문서입니다. 별도 동의가 필요한 사항은 각 기능의 동의 화면에서 선택할 수 있습니다. <a href="../terms/">서비스 이용약관 보기</a></p>
     </article>
   </main>
 </body>
